@@ -1,4 +1,4 @@
-setwd("D:/Studi S2/Bahan Kuliah/Semester 1/Teknik Analisis Data/Tugas/UAS")
+setwd("D:") #set directory
 time <- as.POSIXlt(Sys.time(), "UTC")
 ncin <-- nc_open()
 ncin <-- nc_open("totalprecipitation.nc")
@@ -16,5 +16,5 @@ lonlim <- which.min(abs(lon-105.5))
 tp.array <- ncvar_get(ncin,"tp")
 tp.slice <- tp.array[6,3,]
 t1 <- ncdf4.helpers::nc.get.time.series(ncin,time.dim.name = "time")
-write.csv(tp.slice, file = "tpslicefix.csv")
+write.csv(tp.slice, file = "*.csv") #export file
 
